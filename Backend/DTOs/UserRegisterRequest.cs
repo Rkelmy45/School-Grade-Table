@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend.DTOs
 {
-    public class UserRegisterDTO
+    public class UserRegisterRequest
     {
     [Required(ErrorMessage = "Your Full Name is Required.")]
     public string FullName { get; set; } = string.Empty;

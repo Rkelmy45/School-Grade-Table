@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend.DTOs
 {
-    public class StudentScoreDTO
+    public class StudentScoreRequest
     {
         [Required(ErrorMessage = "Full Name is required.")]
         public string FullName { get; set; } = string.Empty;
