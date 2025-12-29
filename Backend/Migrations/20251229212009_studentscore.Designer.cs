@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251229193548_studentscore")]
+    [Migration("20251229212009_studentscore")]
     partial class studentscore
     {
         /// <inheritdoc />
@@ -33,16 +33,14 @@ namespace Backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("Age")
-                        .IsRequired()
+                    b.Property<int>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("Classroom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("EnglishGrades")
-                        .IsRequired()
+                    b.Property<int>("EnglishGrades")
                         .HasColumnType("int");
 
                     b.Property<string>("FullName")
@@ -62,7 +60,7 @@ namespace Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Student Score");
+                    b.ToTable("StudentScore");
                 });
 
             modelBuilder.Entity("Backend.Models.UserRegisterModel", b =>
@@ -94,7 +92,7 @@ namespace Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User Register");
+                    b.ToTable("UserRegister");
                 });
 #pragma warning restore 612, 618
         }

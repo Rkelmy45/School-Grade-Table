@@ -12,7 +12,7 @@ namespace Backend.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Student Score",
+                name: "StudentScore",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -27,11 +27,11 @@ namespace Backend.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Student Score", x => x.Id);
+                    table.PrimaryKey("PK_StudentScore", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "User Register",
+                name: "UserRegister",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -44,7 +44,7 @@ namespace Backend.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User Register", x => x.Id);
+                    table.PrimaryKey("PK_UserRegister", x => x.Id);
                 });
         }
 
@@ -52,10 +52,10 @@ namespace Backend.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Student Score");
+                name: "StudentScore");
 
             migrationBuilder.DropTable(
-                name: "User Register");
+                name: "UserRegister");
         }
     }
 }
