@@ -1,5 +1,33 @@
+using Backend.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
+//Conexion a SQL Server and Docker.
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration
+    .GetConnectionString("StudentScoreDb"))
+);
+
+
+//Conexion al Frontend.
+// builder.Services.AddCors(option =>
+// {
+//     option.AddPolicy("StudentScoreDb", app =>
+//     {
+//         app.AllowAnyOrigin()
+//         .AllowAnyHeader()
+//         .AllowAnyMethod();
+//     });
+// });
+
+
+//Registrar Controller.
+builder.Services.AddControllers();
+
+
+// Swagger.
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -7,6 +35,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
+// Activar Swagger en Development.
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -14,31 +44,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Llamar a CORS.
+// app.UseCors("StudentScoreDb");
+
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// Mapear endpoints de controller.
+app.MapControllers();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-
+// RUN ALWAYS AT THE END.
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

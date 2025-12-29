@@ -9,9 +9,12 @@ namespace Backend.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base (options) {}
+        public AppDbContext(DbContextOptions<AppDbContext> options) 
+        : base (options) 
+        {
+        }
+
         public DbSet<StudentScoreModel> StudentScoreModels { get; set; }
-        public DbSet<UserLoginModel> UserLoginModels { get; set; }
         public DbSet<UserRegisterModel> UserRegisterModels { get; set; }
     }
 }
