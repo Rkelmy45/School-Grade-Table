@@ -1,9 +1,40 @@
 import React from "react";
+import "../Styles/StudentScore.css";
 
-function StudentScore () {
-    return (
+function StudentScore() {
+  return (
+    <div className="container-studentcore">
+      <h1 className="titulo-studentcore">Student Score Table</h1>
 
-    );
+      <div className="container-table-studentscore">
+        <table className="table-studentscore">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Classroom</th>
+              <th>Age</th>
+              <th>English Grades</th>
+              <th>Incidents</th>
+              <th>Productions</th>
+              <th>Registration Date</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
 
 export default StudentScore;
