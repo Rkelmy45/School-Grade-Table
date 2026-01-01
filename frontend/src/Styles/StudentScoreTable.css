@@ -1,0 +1,168 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container-studentcore {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, #002d62, #ce1126, #ffffff);
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== TÍTULO ===== */
+.titulo-studentcore {
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Search Student */
+/* CONTENEDOR PRINCIPAL */
+.container-searchStudent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  max-width: 420px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ///////////////////////////////////////////////////////////// */
+/* CONTENEDOR DEL BUSCADOR */
+.container-searchStudent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 100px;
+}
+
+/* INPUT */
+.input-searchStudent {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-searchStudent::placeholder {
+  color: #9ca3af;
+}
+
+.input-searchStudent:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* BOTÓN */
+.btn-searchStudent {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-searchStudent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+}
+
+.btn-searchStudent:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .container-searchStudent {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-searchStudent {
+    width: 100%;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+/* ===== CONTENEDOR DE LA TABLA (CARD) ===== */
+.container-table-studentscore {
+  background-color: #ffffff;
+  padding: 30px;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow-x: auto;
+}
+
+/* ===== TABLA ===== */
+.table-studentscore {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+/* ===== ENCABEZADOS ===== */
+.table-studentscore thead {
+  background-color: #1e293b;
+}
+
+.table-studentscore th {
+  color: #ffffff;
+  padding: 14px 12px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  text-align: left;
+}
+
+/* ===== FILAS ===== */
+.table-studentscore td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* ===== HOVER ===== */
+.table-studentscore tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* ===== ÚLTIMA FILA ===== */
+.table-studentscore tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .titulo-studentcore {
+    font-size: 1.8rem;
+  }
+
+  .container-table-studentscore {
+    padding: 20px;
+  }
+}

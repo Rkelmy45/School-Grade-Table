@@ -1,11 +1,12 @@
 import "./App.css";
 import UserRegister from "./Components/UserRegister";
 import UserLogin from "./Components/UserLogin";
-import StudentScore from "./Components/StudentScore";
+import StudentScoreTable from "./Components/StudentScoreTable";
+import StudentRegister from "./Components/StudentRegister";
 import { useState } from "react";
 
 function App() {
-  const [view, setView] = useState("register");
+  const [view, setView] = useState("userRegister");
 
   return (
     <div className="App">
@@ -14,26 +15,40 @@ function App() {
       <nav className="sidebar">
         <button
           className="btn-userRegister"
-          onClick={() => setView("register")}
+          onClick={() => setView("userRegister")}
         >
-          User Register.
+          User Register
         </button>
 
-        <button className="btn-userRegister" onClick={() => setView("login")}>
-          Login.
+        <button
+          className="btn-userRegister"
+          onClick={() => setView("userLogin")}
+        >
+          Login
         </button>
 
-        <button className="btn-userRegister" onClick={() => setView("score")}>
-          Student Score.
+        <button
+          className="btn-userRegister"
+          onClick={() => setView("studentRegister")}
+        >
+          Student Register
+        </button>
+
+        <button
+          className="btn-userRegister"
+          onClick={() => setView("studentScoreTable")}
+        >
+          Student Score Table
         </button>
       </nav>
       {/* ///////////////////////////////////////////////////////////////////////////////////// */}
 
       {/* CONTENIDO */}
       <div className="main-content">
-        {view === "register" && <UserRegister />}
-        {view === "login" && <UserLogin />}
-        {view === "score" && <StudentScore />}
+        {view === "userRegister" && <UserRegister />}
+        {view === "userLogin" && <UserLogin />}
+        {view === "studentRegister" && <StudentRegister />}
+        {view === "studentScoreTable" && <StudentScoreTable />}
       </div>
     </div>
   );

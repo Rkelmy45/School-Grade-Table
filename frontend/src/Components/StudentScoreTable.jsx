@@ -1,10 +1,18 @@
 import React from "react";
-import "../Styles/StudentScore.css";
+import "../Styles/StudentScoreTable.css";
 
-function StudentScore() {
+function StudentScoreTable() {
   return (
     <div className="container-studentcore">
       <h1 className="titulo-studentcore">Student Score Table</h1>
+
+      <div className="container-searchStudent">
+        <input
+          className="input-searchStudent"
+          placeholder="Search For Student"
+        />
+        <button className="btn-searchStudent">Search</button>
+      </div>
 
       <div className="container-table-studentscore">
         <table className="table-studentscore">
@@ -37,4 +45,4 @@ function StudentScore() {
   );
 }
 
-export default StudentScore;
+export default StudentScoreTable;

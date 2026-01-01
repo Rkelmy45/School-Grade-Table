@@ -13,10 +13,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 220px;
+  width: 205px;
   height: 100vh;
   background: linear-gradient(150deg, #002d62, #ce1126, #ffffff);
-
   display: flex;
   flex-direction: column;
   padding: 20px;

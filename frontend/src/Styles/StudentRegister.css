@@ -1,0 +1,129 @@
+/* CONTENEDOR PRINCIPAL */
+.container-studentregister {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, #002d62, #ce1126, #ffffff);
+  padding: 20px;
+}
+
+/* TÍTULO */
+.titulo-studentregister {
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* CAJA DEL FORMULARIO */
+.container-input-studentregister {
+  background-color: #ffffff;
+  padding: 30px 35px;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* TÍTULO DE CADA INPUT */
+.titulo-input {
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* INPUTS */
+.input-studentregister {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-studentregister::placeholder {
+  color: #9ca3af;
+}
+
+.input-studentregister:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* TEXTAREA */
+.texttarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  resize: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.texttarea::placeholder {
+  color: #9ca3af;
+}
+
+.texttarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .container-input-studentregister {
+    padding: 25px 20px;
+  }
+
+  .titulo-studentregister {
+    font-size: 1.8rem;
+  }
+}
+
+/* ////////// BOTON ///////// */
+
+/* Contenedor */
+.container-btn-studentRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Botón REGISTER */
+.btn-studentRegister {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.btn-studentRegister:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+}
+
+/* Click */
+.btn-studentRegister:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
