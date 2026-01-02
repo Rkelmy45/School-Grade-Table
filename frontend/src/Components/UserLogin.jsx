@@ -24,7 +24,7 @@ function UserLogin() {
   // GET Method //////////////////////////////////////////////////////////////
   const getUser = async () => {
     const response = await fetch(
-      `${UserRegisterController.apiUrl}/${login.fullname}/${login.emailaddress}/${login.password}`
+      `${UserRegisterController.apiUrl}/${login.fullname}`
     );
 
     if (response.ok) {

@@ -12,15 +12,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 //Conexion al Frontend.
-// builder.Services.AddCors(option =>
-// {
-//     option.AddPolicy("StudentScoreDb", app =>
-//     {
-//         app.AllowAnyOrigin()
-//         .AllowAnyHeader()
-//         .AllowAnyMethod();
-//     });
-// });
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("StudentScoreDb", app =>
+    {
+        app.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 
 
 //Registrar Controller.
@@ -45,7 +45,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Llamar a CORS.
-// app.UseCors("StudentScoreDb");
+app.UseCors("StudentScoreDb");
 
 app.UseHttpsRedirection();
 

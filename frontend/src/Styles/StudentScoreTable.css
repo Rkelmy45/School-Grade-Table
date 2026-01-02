@@ -37,14 +37,14 @@
 .container-searchStudent {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px; /* antes 10px, más separación entre input y botón */
   background-color: #ffffff;
-  padding: 10px 12px;
-  border-radius: 12px;
-  max-width: 420px;
+  padding: 20px 25px; /* antes 10px 12px, ahora más grande */
+  border-radius: 15px; /* un poco más redondeado */
+  max-width: 1000px; /* antes 420px, más ancho */
   width: 100%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  margin-bottom: 100px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* sombra más intensa */
+  margin-bottom: 120px; /* un poco más de espacio abajo */
 }
 
 /* INPUT */
@@ -59,7 +59,7 @@
 }
 
 .input-searchStudent::placeholder {
-  color: #9ca3af;
+  color: #a4af9c;
 }
 
 .input-searchStudent:focus {
@@ -68,6 +68,8 @@
 }
 
 /* BOTÓN */
+/* ///////////////////////////////////////////////////////////// */
+
 .btn-searchStudent {
   padding: 10px 16px;
   border-radius: 8px;

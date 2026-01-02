@@ -8,6 +8,7 @@ function StudentScoreTable() {
   // Hook ///////////////////////////////////////////////////////////////////////////////////
   const [search, setSearch] = useState({
     fullname: "",
+    classroom: "",
   });
 
   const [student, setStudent] = useState(null);
@@ -24,16 +25,16 @@ function StudentScoreTable() {
   // GET Method //////////////////////////////////////////////////////////////
   const getScore = async () => {
     const response = await fetch(
-      `${StudentScoreController.apiUrl}/${search.fullname}`
+      `${StudentScoreController.apiUrl}/${search.fullname}/${search.classroom}`
     );
 
     if (response.ok) {
       const scoreResult = await response.json();
-      setSearch(scoreResult);
+      setStudent(scoreResult[0]);
 
       Swal.fire({
         title: "Student Found!",
-        html: `<b>User:</b>${scoreResult.fullname}`,
+        html: `<b>User:</b> ${scoreResult.fullname}`,
         icon: "success",
       });
     } else {
@@ -53,10 +54,19 @@ function StudentScoreTable() {
       <div className="container-searchStudent">
         <input
           className="input-searchStudent"
-          placeholder="Search By Fullname"
+          placeholder="Fullname"
           type="text"
           name="fullname"
           value={search.fullname}
+          onChange={handleChangeScore}
+        />
+
+        <input
+          className="input-searchStudent"
+          placeholder="Classroom"
+          type="text"
+          name="classroom"
+          value={search.classroom}
           onChange={handleChangeScore}
         />
 
@@ -83,7 +93,7 @@ function StudentScoreTable() {
           <tbody>
             {student ? (
               <tr>
-                <td>{student.fullname}</td>
+                <td>{student.fullName}</td>
                 <td>{student.classroom}</td>
                 <td>{student.age}</td>
                 <td>{student.englishGrade}</td>
