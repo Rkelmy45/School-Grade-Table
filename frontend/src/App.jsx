@@ -24,7 +24,7 @@ function App() {
           className="btn-userRegister"
           onClick={() => setView("userLogin")}
         >
-          Login
+          User Login
         </button>
 
         <button
